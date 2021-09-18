@@ -25,7 +25,7 @@ public class AuthFilter implements Filter {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        AuthenticationProcessor processor = Authenticator.GetAuthProcessor(httpRequest);
+        AuthenticationProcessor processor = Authenticator.GetAuthProcessor();
         boolean authorized = processor.isAuthorized(Authenticator.GetAuthProvider(httpRequest));
         if(authorized)
             chain.doFilter(request, response);
