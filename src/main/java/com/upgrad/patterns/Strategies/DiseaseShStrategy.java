@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 @Service
@@ -43,7 +44,7 @@ public class DiseaseShStrategy implements IndianDiseaseStat {
 	    	//return the response after rounding it up to 0 decimal places
 
             DiseaseShResponse response = getDiseaseShResponseResponses();
-            return response.getCases().toString();
+            return new DecimalFormat("#").format(response.getCases());
         } catch (Exception e) {
     	//catch block
     		//log the error

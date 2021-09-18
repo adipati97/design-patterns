@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,7 +50,7 @@ public class JohnHopkinsStrategy implements IndianDiseaseStat {
 			for (float count : confirmedCountsForIndia) {
 				totalCount += count;
 			}
-			return String.valueOf(totalCount);
+			return new DecimalFormat("#").format(totalCount);
 		} catch (Exception e) {
 			//catch block
 			//log the error
