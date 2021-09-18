@@ -16,7 +16,6 @@ public class Authenticator {
 	// Chain Authentication processors, first JWT processor is to be used first and then basic auth processor
 	// return the object
     public static AuthenticationProcessor GetAuthProcessor () {
-        //this needs to be finished
         return new JwtAuthProcessor(new BasicAuthProcessor(null));
     }
 	
